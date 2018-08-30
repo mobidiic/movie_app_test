@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Movie from './ui/Movie'
+import '../../stylesheets/App.scss'
 
 
 class App extends Component{
@@ -17,7 +18,7 @@ class App extends Component{
     console.log(this.state.movies)
     const movies = this.state.movies.map((movie) => {
       return <Movie title={movie.title}
-                    poster={movie.small_cover_image}
+                    poster={movie.medium_cover_image}
                     key={movie.id}
                     genres={movie.genres}
                     rating={movie.rating}
@@ -43,7 +44,7 @@ class App extends Component{
 
   render(){
     return (
-      <div className="movieList">
+      <div className="movie-List">
         {this.state.movies ? this._renderMovies() : 'Loading' }
       </div>
     )
