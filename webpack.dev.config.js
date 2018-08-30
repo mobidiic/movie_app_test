@@ -2,6 +2,7 @@ var webpack = require("webpack")
 var path = require("path")
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 process.noDeprecation = true
 
