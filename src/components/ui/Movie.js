@@ -13,17 +13,20 @@ class Movie extends Component {
   }
 }
 
-class MoviePoster extends Component{
-  render(){
-    return (
-      <img src={this.props.poster} />
-    )
-  }
+
+
+const MoviePoster = ({poster}) => {
+  return (
+    <img src={poster} alt='movie poster' />
+  )
 }
 
 Movie.propTypes = {
-  title: PropTypes.string,
-  poster: PropTypes.string
+  title: PropTypes.string.isRequired,
+  poster: PropTypes.string.isRequired,
+  genre: PropTypes.array.isRequired,
+  synopsis: PropTypes.string.isRequired,
+  rating: PropTypes.number
 }
 
 MoviePoster.propTypes = {
