@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import LinesEllipsis from 'react-lines-ellipsis'
 import '../../../stylesheets/Movie.scss'
 
 class Movie extends Component {
@@ -22,7 +23,11 @@ class Movie extends Component {
             })}
           </div>
           <p className="movie__synopsis">
-            {synopsis}
+            <LinesEllipsis text={synopsis}
+                           maxLine= '3'
+                           ellipsis= '...'
+                           trimRight
+                           basedOn = 'letters' />
           </p>
         </div>
       </div>
