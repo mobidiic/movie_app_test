@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import LinesEllipsis from 'react-lines-ellipsis'
+// import StarRating from './StarRating'
 import '../../../stylesheets/Movie.scss'
 
 class Movie extends Component {
   render(){
     const { title, poster, genres, synopsis, rating } =this.props
-    const totalScore = '10.0'
     return(
       <div className="movie-wrapper">
         <div className="movie__columns">
@@ -15,20 +15,19 @@ class Movie extends Component {
         <div className="movie__columns">
           <h2>{title}</h2>
           <div className="movie__rating">
-            <span className="_rating">{rating}</span><span className="_totalScore"> / {totalScore}</span>
           </div>
           <div className="movie__genres">
             {genres.map((genre, i) => {
               return <MovieGenre genre={genre} key={i} />
             })}
           </div>
-          <p className="movie__synopsis">
+          <div className="movie__synopsis">
             <LinesEllipsis text={synopsis}
                            maxLine= '3'
                            ellipsis= '...'
                            trimRight
                            basedOn = 'letters' />
-          </p>
+          </div>
         </div>
       </div>
     )
